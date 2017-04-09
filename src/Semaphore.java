@@ -103,13 +103,9 @@ public class Semaphore {
     }
 
     private synchronized void checkMaxNumberOfPermits() {
-        System.out.println(Thread.currentThread().getName()+" checkMaxNumberOfPermits start");
-        System.out.println("check number of permits = "+numberOfPermits);
-
         if (numberOfPermits>maxNumberOfPermits){
             throw new RuntimeException("Number of permits become more then max available for the Semaphore");
         }
-        System.out.println(Thread.currentThread().getName()+" checkMaxNumberOfPermits end");
     }
 
     public int getAvailablePermits() {
