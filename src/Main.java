@@ -6,14 +6,14 @@ import static java.lang.Thread.currentThread;
 public class Main {
 
     public static void main(String[] args) {
-        final Semaphore s = new Semaphore(3);
+        final Semaphore s = new Semaphore(4);
 
-        new Thread(new TestRunnable(s)).start();
-        new Thread(new TestRunnableMultiplePermits(s, 2)).start();
-        new Thread(new TestRunnable(s)).start();
         new Thread(new TestRunnable(s)).start();
         new Thread(new TestRunnableMultiplePermits(s,3)).start();
         new Thread(new TestRunnable(s)).start();
+        new Thread(new TestRunnable(s)).start();
+        new Thread(new TestRunnable(s)).start();
+        new Thread(new TestRunnableMultiplePermits(s, 2)).start();
         new Thread(new TestRunnable(s)).start();
         new Thread(new TestRunnable(s)).start();
     }
